@@ -1,0 +1,19 @@
+
+
+.card{
+  width: 99%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid black;
+
+}
+
+.input{
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
