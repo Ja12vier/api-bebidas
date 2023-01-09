@@ -43,7 +43,7 @@ setNomberData(e.target[0].value.toLowerCase())
   <div className="input">
     <form onSubmit={(e)=>getBuscar(e)}>
 <input type="text" placeholder='Buscar bebida'/>
-<button type='submit'>  <img src="/src/assets/disparos.png" alt="" />    </button>
+<button type='submit'>  <img src="/src/assets/disparos.png" alt="" /> BUSCAR   </button>
     </form>
   </div>
 {bebiData !== null ?
