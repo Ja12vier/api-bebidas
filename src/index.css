@@ -17,3 +17,17 @@
   justify-content: center;
   align-items: center;
 }
+.imagen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.imagen img{
+  width: 30%;
+}
+
+button img{
+  width: 30px;
+}

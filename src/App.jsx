@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 function App() {
-  const [bebiData, setBebiData]=useState([])
+  const [bebiData, setBebiData]=useState( [])
   const [nomberData, setNomberData]=useState([])
 
 
@@ -21,9 +21,10 @@ const getData=()=>{
   axios
   .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${nomberData}`)
   .then((result) => {console.log(result.data.drinks)
-    setBebiData(result.data.drinks)
-  })
-  .catch((err) => { console.error(err)});
+    setBebiData(result.data.drinks) })
+ .catch((error) => {console.error(error.data) 
+})
+ 
 }
 
 const getBuscar=(e)=>{
@@ -42,15 +43,22 @@ setNomberData(e.target[0].value.toLowerCase())
   <div className="input">
     <form onSubmit={(e)=>getBuscar(e)}>
 <input type="text" placeholder='Buscar bebida'/>
-<button type='submit'>Buscar</button>
+<button type='submit'>  <img src="/src/assets/disparos.png" alt="" />    </button>
     </form>
   </div>
-{
-    bebiData.map((strDrink, index)=><Card
-    key={index}
-   datas={strDrink}
-    />)
+{bebiData !== null ?
 
+ bebiData.map((caracter, index)=><Card
+ key={`caracter${index}`}
+ datas={caracter}
+
+ />)
+
+ : <div className='imagen'>
+  <img src="/src/assets/bebida.jpg" alt="" />
+ <h1>no hay concidencias</h1>
+ </div>
+  
     }
 
 </div>
